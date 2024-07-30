@@ -1,0 +1,1 @@
+ALTER TABLE trade ADD CONSTRAINT UniqueTrade UNIQUE (value, tradeno, quantity);
