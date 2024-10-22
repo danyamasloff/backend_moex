@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import org.springframework.data.annotation.Id;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
@@ -30,6 +31,7 @@ public class Trade {
     private String buysell;
     private Integer decimals;
     private String tradingsession;
+    private Date tradeDate;
 
 
     // Getters and Setters
@@ -137,7 +139,13 @@ public class Trade {
         this.tradingsession = tradingsession;
     }
 
+    public Date getTradeDate() {
+        return tradeDate;
+    }
 
+    public void setTradeDate(Date tradeDate) {
+        this.tradeDate = tradeDate;
+    }
 
     public void setId(Long id) {
         this.id = id;

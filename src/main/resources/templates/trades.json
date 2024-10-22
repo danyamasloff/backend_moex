@@ -15,7 +15,7 @@
 		"DECIMALS": {"type": "int32"},
 		"TRADINGSESSION": {"type": "string", "bytes": 3, "max_size": 0}
 	},
-	"columns": ["TRADENO", "TRADETIME", "BOARDID", "SECID", "PRIC E", "QUANTITY", "VALUE", "PERIOD", "TRADETIME_GRP", "SYSTIME", "BUYSELL", "DECIMALS", "TRADINGSESSION"],
+	"columns": ["TRADENO", "TRADETIME", "BOARDID", "SECID", "PRICE", "QUANTITY", "VALUE", "PERIOD", "TRADETIME_GRP", "SYSTIME", "BUYSELL", "DECIMALS", "TRADINGSESSION"],
 	"data": [
 		[10962393557, "09:59:31", "TQBR", "AGRO", 1445, 1, 1445, "S", 959, "2024-07-22 09:59:32", "S", 1, "1"],
 		[10962393558, "09:59:31", "TQBR", "AGRO", 1445, 9, 13005, "S", 959, "2024-07-22 09:59:32", "S", 1, "1"],
