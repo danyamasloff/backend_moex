@@ -1,13 +1,12 @@
 package ru.maslov.moexanalytic.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import ru.maslov.moexanalytic.entity.AggregatedData;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import ru.maslov.moexanalytic.service.AggregationService;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -18,12 +17,8 @@ public class AggregationController {
     private AggregationService aggregationService;
 
     @GetMapping("/aggregated-trades")
-    public ResponseEntity<List<AggregatedData>> getAggregatedTrades(
-            @RequestParam String secid,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
-
-        List<AggregatedData> aggregatedDataList = aggregationService.aggregateAndSaveTrades(secid, startDate, endDate);
-        return ResponseEntity.ok(aggregatedDataList);
+    public ResponseEntity<List<Object[]>> getAllAggregatedTrades() {
+        List<Object[]> aggregatedTrades = aggregationService.getAllAggregatedTrades();
+        return ResponseEntity.ok(aggregatedTrades);
     }
 }

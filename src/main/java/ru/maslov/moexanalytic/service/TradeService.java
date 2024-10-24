@@ -20,8 +20,8 @@ public class TradeService {
     }
 
     //Метод для получения агрегированных данных.
-    public List<Object[]> aggregateTradesByDayAndInstrument() {
-        return tradeRepository.findSumValueByInstrumentAndTradeDate();
+    public List<Object[]> aggregateDailyTradesBySecid() {
+        return tradeRepository.findSumValueBySecidAndTradeDate();
     }
 
     // Метод для получения сделки по ID

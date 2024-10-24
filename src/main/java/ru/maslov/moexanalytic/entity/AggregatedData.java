@@ -2,7 +2,7 @@ package ru.maslov.moexanalytic.entity;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "aggregated_data")
@@ -13,12 +13,15 @@ public class AggregatedData {
     private Long id;
 
     private String secid;
-    private Date tradeDate;
+
+    // Заменяем tradeDate на systime, если нужно работать с временной меткой
+    private LocalDateTime systime;
+
     private BigDecimal price; // Средняя цена за день
     private int quantity; // Общее количество сделок за день
     private BigDecimal value; // Суммарная стоимость всех сделок за день
 
-    // Getters and Setters
+    // Getters и Setters
     public Long getId() {
         return id;
     }
@@ -35,12 +38,12 @@ public class AggregatedData {
         this.secid = secid;
     }
 
-    public Date getTradeDate() {
-        return tradeDate;
+    public LocalDateTime getSystime() {
+        return systime;
     }
 
-    public void setTradeDate(Date tradeDate) {
-        this.tradeDate = tradeDate;
+    public void setSystime(LocalDateTime systime) {
+        this.systime = systime;
     }
 
     public BigDecimal getPrice() {
